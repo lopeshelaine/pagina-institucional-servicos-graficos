@@ -175,3 +175,38 @@ section {
     text-align: center;
     background: var(--footer-bg);
 }
+
+/* Responsividade - Sprint 2) */
+@media (max-width: 992px){
+  .heading{ font-size: 2.4rem; }
+  .about-content h1{ font-size: 2.8rem; }
+  .about-content h3{ font-size: 1.6rem; }
+  .navbar a{ margin-left: 1.5rem; }
+}
+
+@media (max-width: 768px){
+  .header{
+    padding: 1rem 5%;
+    flex-direction: column;
+    gap: .8rem;
+  }
+  .navbar a{
+    margin: 0 .8rem;
+    font-size: 1rem;
+  }
+
+  section{ padding: 10rem 5% 3rem; }
+
+  .projects-container{
+    grid-template-columns: 1fr;
+  }
+
+  .project-card{ padding: 1.5rem; }
+}
+
+@media (max-width: 480px){
+  .logo-img{ height: 42px; }
+  .btn{ padding: .9rem 1.8rem; }
+  .heading{ font-size: 2rem; }
+  .about-content h1{ font-size: 2.2rem; }
+}
