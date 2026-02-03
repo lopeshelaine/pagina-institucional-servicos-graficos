@@ -1,3 +1,5 @@
+> Sprint 2 em andamento (finalização e refinamentos)
+
 # Página Institucional – Exitus Sinalização
 
 Projeto desenvolvido como parte da **1ª Sprint do HAN/25**.
