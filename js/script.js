@@ -5,6 +5,17 @@ const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header .navbar a");
 const contactForm = document.getElementById("contact-form");
 
+// ✅ Elemento de feedback (vem do <p id="form-feedback"> no HTML)
+const feedbackEl = document.getElementById("form-feedback");
+
+function showFeedback(msg, ok = false) {
+  if (!feedbackEl) return;
+  feedbackEl.textContent = msg;
+  feedbackEl.style.marginTop = "1rem";
+  feedbackEl.style.fontWeight = "600";
+  feedbackEl.style.color = ok ? "#00A84F" : "#FF0000";
+}
+
 /**
  * Lógica de Navegação Ativa (Scroll)
  * Otimizada para atualizar o menu conforme o usuário desce a página
@@ -47,7 +58,7 @@ if (contactForm) {
 
     // Validação simples
     if (name === "" || email === "" || message === "") {
-      alert("⚠️ Por favor, preencha todos os campos antes de enviar.");
+      showFeedback("⚠️ Por favor, preencha todos os campos antes de enviar.");
       return;
     }
 
@@ -59,9 +70,12 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.style.opacity = "0.7";
 
+    // (Opcional) limpa mensagem anterior antes de "enviar"
+    showFeedback("");
+
     // Simula um atraso de rede (1.5 segundos)
     setTimeout(() => {
-      alert(`✅ Sucesso! Obrigado, ${name}. Recebemos sua mensagem.`);
+      showFeedback(`✅ Obrigado, ${name}! Recebemos sua mensagem.`, true);
 
       // Reseta o formulário
       contactForm.reset();
